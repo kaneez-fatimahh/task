@@ -74,7 +74,9 @@ function comparison(commentID) {
 //Title Based Search
 
 searchBtn.addEventListener("click", () => {
-  let word = postsData.filter((d) => d.title.includes(`${searchinput.value}`));
+  let newSearch = searchinput.value.toLowerCase();
+  console.log(newSearch)
+  let word = postsData.filter((d) => d.title.includes(`${newSearch}`));
   addRow.innerHTML = "";
   word.forEach((element) => {
     addRow.innerHTML += `
